@@ -9,13 +9,17 @@ const postRoute = require('./routes/posts')
 const categoryRoute = require('./routes/categories')
 const multer = require("multer")
 const path = require('path')
-
+const {fileURLToPath} = require('url')
 
 
 
 app.use(express.json());
 //ye is liye hai jo photo me write me dalu wo dikhe 
 app.use("/images", express.static(path.join(__dirname, "/images")));
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 mongoose
